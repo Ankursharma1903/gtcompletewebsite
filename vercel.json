@@ -13,6 +13,10 @@
       "dest": "/static/$1"
     },
     {
+      "src": "/static/css/(.*)",
+      "dest": "/static/css/$1"
+    },
+    {
       "src": "/views/(.*)",
       "dest": "/views/$1"
     },
