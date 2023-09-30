@@ -1,18 +1,27 @@
 {
-    "version":2,
-    "builds":[{
-        "src":"./app.js",
-        "use":"@vercel/node"
-    }],
-    "routes":[
-        {
-            "src": "/views/(.*)",  
-            "dest": "/views/$1"   
-        },
-        {
-            "src":"/(.*)/",
-            "dest":"/"
-        }
-    ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "./app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/views/(.*)",
+      "dest": "/views/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ],
+  "env": {
+    "mongo_connect_uri": "mongodb+srv://ankur:1903@cluster0.vet21d2.mongodb.net/",
+    "port": "3000"
+  }
 }
