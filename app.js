@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var router = express.Router();
 const bodyparser = require("body-parser");
-
+require("dotenv").config();
 var path = __dirname + "/views/";
 
 app.use("/", router);
@@ -13,7 +13,8 @@ const mongoose = require("mongoose");
 const { stringify } = require("nodemon/lib/utils");
 
 // mongoose.connect('mongodb://localhost/gamingtitans',{useNewUrlParser:true});
-mongoose.connect("mongodb://127.0.0.1:27017/gamingtitans", {
+// mongoose.connect("mongodb://127.0.0.1:27017/gamingtitans", {
+mongoose.connect(`${process.env.mongo_connect_uri}gamingtitans`, {
   useNewUrlParser: true,
 });
 var db = mongoose.connection;
