@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
 const { stringify } = require("nodemon/lib/utils");
 
 // mongoose.connect('mongodb://localhost/gamingtitans',{useNewUrlParser:true});
-mongoose.connect(`${process.env.MONGODB_CONNECT_URI}`, {
+mongoose.connect("mongodb://127.0.0.1:27017/gamingtitans", {
   useNewUrlParser: true,
 });
 var db = mongoose.connection;
@@ -75,8 +75,9 @@ app.post("/contact", function (req, res) {
 app.use("*", function (req, res) {
   res.send("Error 404: Not Found!");
 });
-PORT = process.env.PORT;
-app.listen(PORT, function () {
+
+const port = process.env.port || 3000;
+app.listen(3000, function () {
   console.log("Server running at Port 3000");
 });
 

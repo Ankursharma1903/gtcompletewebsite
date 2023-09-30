@@ -2,11 +2,15 @@
   "name": "titans",
   "version": "1.0.0",
   "description": "used for website of gaming titans",
-  "main": "index.js",
+  "main": "app.js",
+  "engines": {
+    "node": "18.x"
+  },
   "directories": {
     "lib": "lib"
   },
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ankur Sharma ,Amar Kounsal",
