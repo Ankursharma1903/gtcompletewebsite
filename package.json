@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "[my-framework] build --output public"
   },
   "author": "Ankur Sharma ,Amar Kounsal",
   "license": "ISC",
